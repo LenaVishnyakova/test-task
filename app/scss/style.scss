@@ -1,0 +1,11 @@
+@use './main/reset';
+@use './main/vars';
+@use './main/global';
+
+@use './components/header';
+@use './components/sidebar';
+@use './components/main';
+
+@use './components/sale';
+@use './components/formOffer';
+@use './components/benefits';

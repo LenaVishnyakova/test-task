@@ -1,0 +1,77 @@
+@use "../main/vars";
+
+.sale {
+  margin-top: 30px;
+  padding: 13px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  background-color: #c15ca1;
+  border-radius: 10px;
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45.96px;
+    letter-spacing: 0.04em;
+
+    color: vars.$yellow;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+  &__label {
+    color: white;
+    font-weight: 700;
+  }
+
+  &__timer {
+    padding: 5px 20px;
+
+    font-size: 40px;
+    background-color: white;
+    border-radius: 5px;
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+    .sale {
+        &__title {
+            font-size: 24px;
+            line-height: normal;
+        }
+
+        &__label {
+            font-size: 14px;
+        }
+
+        &__timer {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .sale {
+        &__title {
+            font-size: 20px;
+        }
+
+        &__label {
+            font-size: 11px;
+        }
+
+        &__timer {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .sale {
+        display: none;
+    }
+}

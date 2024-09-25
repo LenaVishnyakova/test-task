@@ -1,0 +1,66 @@
+@use '../main/vars';
+
+.main {
+  margin-top: 20px;
+  width: calc(100% - 300px);
+  height: 100%;
+
+  &__title {
+    width: 100%;
+    padding-bottom: 20px;
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45.96px;
+    text-shadow: 4px 4px 0px #00000040;
+    border-bottom: 2px solid rgba(vars.$purple, $alpha: 0.2);
+  }
+
+  &__bubbles1 {
+    position: absolute;
+    z-index: -100;
+    opacity: 0.7;
+    left: -50%;
+  }
+  &__bubbles2 {
+    position: absolute;
+    z-index: -100;
+    opacity: 0.7;
+    left: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 100%;
+
+        &__title {
+          font-size: 32px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+  .main {
+      &__title {
+        font-size: 25px;
+        line-height: normal;
+      }
+
+      &__bubbles1 {
+        display: none;
+      }
+
+      &__bubbles2 {
+        display: none;
+      }
+  }
+}
+
+@media (max-width: 320px) {
+  .main {
+      &__title {
+        font-size: 20px;
+      }
+  }
+}

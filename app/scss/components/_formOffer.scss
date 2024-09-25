@@ -1,0 +1,197 @@
+@use "../main/vars";
+
+.form-offer {
+  .swiper {
+    overflow: visible;
+  }
+
+  margin-top: 26px;
+  &__buttons {
+    display: grid !important;
+    column-gap: 30px;
+    row-gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  &__button {
+    position: relative;
+
+    height: 123px;
+    padding: 15px;
+
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+
+    box-sizing: border-box;
+    background-color: rgba(vars.$purple, $alpha: 0.1);
+    border: 2px solid vars.$purple;
+    border-radius: 10px;
+
+    &:nth-child(n + 6) {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      gap: 41px;
+
+      background: #aa646433;
+      border: 2px solid #aa6464;
+    }
+
+    &:hover {
+      background-color: vars.$purple;
+
+      &::before {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        right: 10px;
+        content: "One time offer!";
+        padding: 3px 10px;
+
+        background-color: vars.$yellow;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+
+      .form-offer__button-block {
+        background-color: vars.$yellow;
+        color: #000;
+      }
+    }
+  }
+
+  &__button-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__button-block {
+    max-width: 185px;
+    width: 100%;
+    padding: 17px 0;
+
+    background-color: #fff;
+    color: rgba(#000, 0.3);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__mobile-button {
+    display: none;
+    margin-top: 34px;
+    padding: 18px 0;
+    width: 100%;
+    height: 55px;
+
+    color: #000;
+    background-color: vars.$yellow;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+
+  &__checkbox-wrapper {
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+
+    accent-color: vars.$purple;
+  }
+
+  &__checkbox-label {
+    font-size: 13px;
+
+    a {
+      color: vars.$purple;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .swiper {
+    overflow: hidden !important;
+  }
+  .swiper-wrapper {
+    display: flex !important;
+  }
+  .form-offer {
+    &__buttons {
+      display: block;
+      gap: 0;
+    }
+
+    &__button {
+      //   margin-left: 20px;
+      padding: 15px 33px;
+      width: 100% !important;
+      height: 59px;
+      background-color: vars.$purple !important;
+      border: 2px solid vars.$purple !important;
+
+      display: flex !important;
+      flex-direction: row;
+      justify-content: end;
+
+      &:hover::before {
+        display: none;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0px;
+        content: "One time offer!";
+        padding: 3px 10px;
+
+        background-color: vars.$yellow;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+    }
+
+    &__button-block {
+      display: none;
+    }
+
+    &__button-price {
+      color: #fff;
+
+      &::after {
+        content: "/5$";
+      }
+    }
+
+    &__mobile-button {
+      display: block;
+    }
+
+    &__checkbox-label {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 1210px) {
+  .form-offer__button:nth-child(n + 5) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 41px;
+
+    background: #aa646433;
+    border: 2px solid #aa6464;
+  }
+}

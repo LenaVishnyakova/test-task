@@ -1,0 +1,89 @@
+@use '../main/vars';
+
+.sidebar {
+    margin: 30px 0;
+    width: 270px;
+    height: 100%;
+
+    background-color: rgba(vars.$purple, $alpha: 0.1);
+    border: 2px solid rgba(vars.$purple, $alpha: 0.2);
+    border-radius: 10px;
+    z-index: 100;
+
+    &_active {
+        transform: translateX(0) !important;
+    }
+
+    &__content {
+        padding: 18px;
+    }
+
+    &__profile {
+        padding-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        border-bottom: 2px solid rgba(vars.$purple, $alpha: 0.2);
+    }
+
+    &__profile-image {
+        width: 49px;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__profile-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__profile-name {
+        font-weight: 700;
+    }
+
+    &__profile-premium {
+        padding: 5px 10px;
+        font-size: 10px;
+
+        background-color: vars.$darkPurple;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    &__links {
+        padding: 21px 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__link a {
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        color: #000;
+
+        &:hover {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-120%);
+        transition: transform 0.3s ease;
+
+        position: absolute;
+        z-index: 100;
+        background-color: #fff;
+    }
+}
